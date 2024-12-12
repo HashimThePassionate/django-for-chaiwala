@@ -1,0 +1,8 @@
+<h2>Company Website</h2>
+<p>There are {{inventory_list|length}} items of inventory.</p>
+<ul>
+{% for  i in inventory_list %}
+    <li>{{i}}</li>
+{% endfor %}
+</ul>
+<p>{{greeting|upper }}</p>
