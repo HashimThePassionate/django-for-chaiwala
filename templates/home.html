@@ -1,8 +1,11 @@
-<h2>Company Website</h2>
-<p>There are {{inventory_list|length}} items of inventory.</p>
-<ul>
-{% for  i in inventory_list %}
-    <li>{{i}}</li>
-{% endfor %}
-</ul>
-<p>{{greeting|upper }}</p>
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock title %}
+{% block main-content %}
+<h2>Welcome to Our {{page}}</h2>
+    <p>
+        This is the home section of our website where you can find an overview of what we offer. Explore our features, services, and latest updates right here.
+    </p>
+    <p>
+        We are dedicated to providing you with the best experience. Scroll down to learn more about us and discover everything we have to offer!
+    </p>
+{% endblock main-content %}

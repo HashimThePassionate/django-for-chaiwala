@@ -1,9 +1,21 @@
 from django.shortcuts import render
-
+from typing import Any
+from django.views.generic import TemplateView
 # Create your views here.
-def home(request):
-    context = {  # new
-        "inventory_list": ["Widget 1", "Widget 2", "Widget 3",'Hi','Hello','Bye'],
-        "greeting": "THAnk you FOR visitING.",
-    }
-    return render(request, 'home.html', context)
+
+
+
+class HomePageView(TemplateView):
+    def get_context_data(self, **kwargs) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["page"] = 'Chaiwala Patti Page'
+        return context
+    
+    template_name = "home.html"
+class AboutPageView(TemplateView):
+    def get_context_data(self, **kwargs) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["name"] = 'Kashan Shafeeq'
+        context["age"] = 22
+        return context
+    template_name = "about.html"
